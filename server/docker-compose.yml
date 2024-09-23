@@ -4,4 +4,4 @@ services:
     restart: always
     build: .
     ports:
-      - "${HOST_PORT}:${PORT}"
+      - "${PORT}:${PORT}"
