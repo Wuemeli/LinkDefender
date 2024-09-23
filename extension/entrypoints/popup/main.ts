@@ -2,8 +2,7 @@ import './style.css';
 
 document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
   <div>
-    <h1 class="text-2xl font-bold">Welcome to LinkDefense!</h1>
-    <p>You are now protected by LinkDefense.</p>
+    <h1 class="text-2xl font-bold">Welcome to LinkDefender!</h1>
     <p>Here are your current statistics:</p>
     <ul>
       <li>Normal links: <span id="normalCount">0</span></li>
