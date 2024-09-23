@@ -31,7 +31,7 @@ app.get('/check/:hostname', (c) => {
   if (result) {
     return c.json( { result: true, "message": "Phishing site detected" })
   } else {
-    return c.json( { result: false, "message": "Site is safe" })
+    return c.json( { result: false, "message": "Site has not been found in any local phishing lists" })
   }
 });
 
