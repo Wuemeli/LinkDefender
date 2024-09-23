@@ -9,8 +9,9 @@ LinkDefender is a blazingly fast phishing protection service that is designed to
 (🚧 This is under development and is not ready for production use) 🚧
 
 ## 📦 Built With
-
--[Bun.sh](https://bun.sh) - Runtime <br> -[Hono](https://hono.dev/) - Web Framework <br> -[wxt](wxt.dev/) - Extension Framework <br>
+- [Bun.sh](https://bun.sh) - Runtime
+- [Hono](https://hono.dev/) - Web Framework
+- [wxt](https://wxt.dev/) - Extension Framework
 
 ## ⭐ Starhistory
 
