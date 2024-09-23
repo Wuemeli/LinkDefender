@@ -15,8 +15,7 @@ app.use('*', async (c, next) => {
 })
 
 app.get('/', (c) => {
-  //todo redirect to chrome extension
-  return c.text('Hello Hono!')
+  return c.redirect("https://github.com/Wuemeli/LinkDefender");
 })
 
 app.get('/check/:hostname', (c) => {
