@@ -3,6 +3,8 @@ import { Hono } from 'hono'
 import { cors } from 'hono/cors'
 import { checkPhishlists } from './utils'
 import { startCron } from './cron'
+import { config } from 'dotenv'
+config()
 
 const app = new Hono()
 startCron();
@@ -33,7 +35,7 @@ app.get('/check/:hostname', (c) => {
   }
 });
 
-const port = 3001
+const port = process.env.PORT || 3001
 console.log(`Server is running on port ${port}`)
 
 serve({

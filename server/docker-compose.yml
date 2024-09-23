@@ -1,0 +1,7 @@
+version: '3'
+services:
+  linkdefender-server:
+    restart: always
+    build: .
+    ports:
+      - "${HOST_PORT}:${PORT}"
