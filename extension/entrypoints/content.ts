@@ -18,7 +18,8 @@ export default defineContentScript({
       showWarning(location.href);
       log("Website is unsafe", "unsafe");
     } else {
-      const response = await fetch(`http://localhost:3001/check/${hostname}`, {
+      
+      const response = await fetch(`https://linkdefender.wuemeli.com/check/${hostname}`, {
         method: "GET",
         headers: {
           "Content-Type": "application/json",
