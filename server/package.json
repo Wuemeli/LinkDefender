@@ -1,0 +1,17 @@
+{
+  "name": "my-app",
+  "scripts": {
+    "dev": "tsx watch src/index.ts"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.1",
+    "@types/node-cron": "^3.0.11",
+    "hono": "^4.6.2",
+    "node-cron": "^3.0.3",
+    "node-redis": "^0.1.7"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.17",
+    "tsx": "^4.7.1"
+  }
+}
