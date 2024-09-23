@@ -35,7 +35,7 @@ app.get('/check/:hostname', (c) => {
   }
 });
 
-const port = process.env.PORT || 3001
+const port = Number(process.env.PORT) || 3001;
 console.log(`Server is running on port ${port}`)
 
 serve({

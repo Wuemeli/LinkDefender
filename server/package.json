@@ -1,8 +1,10 @@
 {
   "name": "linkdefender-server",
+  "module": "src/index.ts",
+  "type": "module",
   "scripts": {
-    "start": "tsx src/index.ts",
-    "dev": "tsx watch src/index.ts"
+    "start": "bun .",
+    "dev": "bun --watch ."
   },
   "dependencies": {
     "@hono/node-server": "^1.13.1",
