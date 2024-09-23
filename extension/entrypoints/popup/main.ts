@@ -1,14 +1,34 @@
 import './style.css';
 
-document.querySelector<HTMLDivElement>('#app')!.innerHTML = `
-  <div>
-    <h1 class="text-2xl font-bold">Welcome to LinkDefender!</h1>
-    <p>Here are your current statistics:</p>
-    <ul>
-      <li>Normal links: <span id="normalCount">0</span></li>
-      <li>Safe links: <span id="safeCount">0</span></li>
-      <li>Unsafe links: <span id="unsafeCount">0</span></li>
-    </ul>
+document.body.innerHTML = `
+  <div id="app">
+    <header>
+      <h1>Welcome to LinkDefender!</h1>
+    </header>
+    
+    <main>
+      <section>
+        <h2>Your Current Statistics</h2>
+        <ul class="stats-list">
+          <li>
+            <strong>Normal Links:</strong>
+            <span id="normalCount">0</span>
+          </li>
+          <li>
+            <strong>Safe Links:</strong>
+            <span id="safeCount">0</span>
+          </li>
+          <li>
+            <strong>Unsafe Links:</strong>
+            <span id="unsafeCount">0</span>
+          </li>
+        </ul>
+      </section>
+      
+      <footer>
+        <p>Made with ❤️ by <a href="https://wuemeli.com" target="_blank">Wuemeli</a></p>
+      </footer>
+    </main>
   </div>
 `;
 
