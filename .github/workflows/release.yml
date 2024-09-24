@@ -1,13 +1,17 @@
 name: Release
 
 on:
-    push:
-        branches:
-        - main
+  push:
+    branches:
+      - main
 
 jobs:
   submit:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: extension
+
     steps:
       - uses: actions/checkout@v4
 
@@ -19,9 +23,7 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: 
-          cd extension
-          pnpm install
+        run: pnpm install
 
       - name: Zip extensions
         run: |
