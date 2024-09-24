@@ -19,7 +19,9 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install
+        run: 
+          cd extension
+          pnpm install
 
       - name: Zip extensions
         run: |
