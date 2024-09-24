@@ -29,13 +29,10 @@ export async function cachePhishlists() {
                     break;
             }
 
-            //@ts-ignore
-            if (!response.ok) {
-                //@ts-ignore
-                throw new Error(`Failed to fetch ${name} list: ${response.statusText}`);
+            if (!response || !response.ok) {
+                throw new Error(`Failed to fetch ${name} list: ${response?.statusText}`);
             }
 
-            //@ts-ignore
             const json = await response.json();
 
             switch (name) {
