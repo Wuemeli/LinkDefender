@@ -13,6 +13,11 @@ LinkDefender is a blazingly fast phishing protection service that is designed to
 - [Hono](https://hono.dev/) - Web Framework
 - [wxt](https://wxt.dev/) - Extension Framework
 
+## 🚀 Features
+
+- [x] Phishing Protection by checking the URL against a list of known phishing sites
+- [] Realtime Website Scanning for possible phishing keywords
+
 ## ⭐ Starhistory
 
 <img src="https://api.star-history.com/svg?repos=Wuemeli/LinkDefender&type=Stars" width = "500" >
@@ -24,6 +29,7 @@ LinkDefender is a blazingly fast phishing protection service that is designed to
 - [ ] More Phishing Link Sources
 - [ ] Try to move away from the Server and use github workflows
 - [ ] Add a better UI for the Extension
+- [ ] Realtime Website Scanning for possible phishing keywords
 
 ## 📫 Contact
 

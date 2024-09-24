@@ -1,7 +1,7 @@
 import { getCache, setCache } from "./utils/cache";
 import { showWarning } from "./utils/warning";
 import { log } from "./utils/log";
-import { increaseNormalCount, increaseSafeCount, increaseUnsafeCount } from "./utils/count";
+import { increaseTotalCount, increaseUnsafeCount } from "./utils/count";
 
 export default defineContentScript({
   matches: ["<all_urls>"],
@@ -9,8 +9,8 @@ export default defineContentScript({
     const hostname = new URL(location.href).hostname;
     log(`Checking ${hostname}`, "info");
 
-    increaseNormalCount();
-
+    increaseTotalCount();
+    
     if (getCache(hostname) === "safe") {
       log("Website is safe", "safe");
       return;
@@ -34,7 +34,6 @@ export default defineContentScript({
 
       if (!responseJson.result) {
         setCache(hostname, "safe");
-        increaseSafeCount();
         log("Website is safe", "safe");
       } else {
         showWarning(location.href);

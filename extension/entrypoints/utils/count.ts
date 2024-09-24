@@ -1,29 +1,15 @@
-export function increaseNormalCount() {
-    const count = localStorage.getItem("normalCount");
-    if (count !== null) {
-        const parsedCount = parseInt(count, 10);
-        localStorage.setItem("normalCount", (parsedCount + 1).toString());
-    } else {
-        localStorage.setItem("normalCount", "1");
-    }
-}
-
-export function increaseSafeCount() {
-    const count = localStorage.getItem("safeCount");
-    if (count !== null) {
-        const parsedCount = parseInt(count, 10);
-        localStorage.setItem("safeCount", (parsedCount + 1).toString());
-    } else {
-        localStorage.setItem("safeCount", "1");
-    }
+export function increaseTotalCount() {
+    chrome.storage.sync.get(['totalCount'], (result) => {
+        const count = parseInt(result.totalCount || '0', 10);
+        chrome.storage.sync.set({ totalCount: count + 1 }, () => {
+        });
+    });
 }
 
 export function increaseUnsafeCount() {
-    const count = localStorage.getItem("unsafeCount");
-    if (count !== null) {
-        const parsedCount = parseInt(count, 10);
-        localStorage.setItem("unsafeCount", (parsedCount + 1).toString());
-    } else {
-        localStorage.setItem("unsafeCount", "1");
-    }
+    chrome.storage.sync.get(['unsafeCount'], (result) => {
+        const count = parseInt(result.unsafeCount || '0', 10);
+        chrome.storage.sync.set({ unsafeCount: count + 1 }, () => {
+        });
+    });
 }
