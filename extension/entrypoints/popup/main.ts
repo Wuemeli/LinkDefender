@@ -1,4 +1,5 @@
 import './style.css';
+import { browser } from 'wxt/browser';
 
 document.body.innerHTML = `
   <div id="app">
@@ -7,16 +8,13 @@ document.body.innerHTML = `
     </header>
     
     <main>
+    <button id="toggleButton">Toggle</button>
       <section>
         <h2>Your Current Statistics</h2>
         <ul class="stats-list">
           <li>
-            <strong>Normal Links:</strong>
-            <span id="normalCount">0</span>
-          </li>
-          <li>
-            <strong>Safe Links:</strong>
-            <span id="safeCount">0</span>
+            <strong>Total Links:</strong>
+            <span id="totalCount">0</span>
           </li>
           <li>
             <strong>Unsafe Links:</strong>
@@ -27,17 +25,29 @@ document.body.innerHTML = `
       
       <footer>
         <p>Made with ❤️ by <a href="https://wuemeli.com" target="_blank">Wuemeli</a></p>
+        <p>Pictures by Freepik from <a href="https://www.flaticon.com/" target="_blank">www.flaticon.com</a></p>
       </footer>
     </main>
   </div>
 `;
 
-/*
-document.addEventListener('DOMContentLoaded', async function () {
-  browser.storage.local.get({ normalCount, safeCount, unsafeCount }, function (result: any) {
-    document.getElementById('normalCount').textContent = result.normalCount || 0;
-    document.getElementById('safeCount').textContent = result.safeCount || 0;
-    document.getElementById('unsafeCount').textContent = result.unsafeCount || 0;
-  });
+chrome.storage.local.get(['totalCount', 'unsafeCount'], (data) => {
+  //@ts-ignore
+  document.getElementById('totalCount').innerText = data?.totalCount ?? 0;
+  //@ts-ignore
+  document.getElementById('unsafeCount').innerText = data?.unsafeCount ?? 0;
 });
-*/
+
+chrome.storage.onChanged.addListener((changes) => {
+  const name = Object.keys(changes)[0];
+
+  if (name === 'totalCount') {
+    //@ts-ignore
+    document.getElementById('totalCount').innerText = changes[name]?.newValue ?? 0;
+  }
+
+  if (name === 'unsafeCount') {
+    //@ts-ignore
+    document.getElementById('unsafeCount').innerText = changes[name]?.newValue ?? 0;
+  }
+});
