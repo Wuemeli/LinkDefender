@@ -24,7 +24,6 @@ LinkDefender is a blazingly fast phishing protection service that is designed to
 
 ## 📥 ToDo
 
-- [ ] Fix the Counts
 - [ ] Update Description for Github, Contributing Guide
 - [ ] More Phishing Link Sources
 - [ ] Try to move away from the Server and use github workflows
