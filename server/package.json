@@ -1,21 +1,28 @@
 {
-  "name": "linkdefender-server",
-  "module": "src/index.ts",
+  "name": "linkdefender",
+  "description": "A browser extension that helps you to avoid phishing links.",
+  "private": true,
+  "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "start": "bun .",
-    "dev": "bun --watch ."
+  "author": {
+    "name": "Wuemeli"
   },
-  "dependencies": {
-    "@hono/node-server": "^1.13.1",
-    "@types/node-cron": "^3.0.11",
-    "dotenv": "^16.4.5",
-    "hono": "^4.6.2",
-    "node-cron": "^3.0.3",
-    "node-redis": "^0.1.7"
+  "scripts": {
+    "dev": "wxt",
+    "dev:firefox": "wxt -b firefox",
+    "build": "wxt build",
+    "build:firefox": "wxt build -b firefox",
+    "zip": "wxt zip",
+    "zip:firefox": "wxt zip -b firefox",
+    "compile": "tsc --noEmit",
+    "postinstall": "wxt prepare"
   },
   "devDependencies": {
-    "@types/node": "^22.0.0",
-    "tsx": "^4.7.1"
-  }
+    "typescript": "^5.5.4",
+    "wxt": "^0.19.1"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0"
+  },
+  "packageManager": "pnpm"
 }
