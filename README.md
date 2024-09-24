@@ -22,7 +22,6 @@ LinkDefender is a blazingly fast phishing protection service that is designed to
 Just.. Do.. It.. 
 Just make sure that youre using the dev branch
 
-
 ## ⭐ Starhistory
 
 <img src="https://api.star-history.com/svg?repos=Wuemeli/LinkDefender&type=Stars" width = "500" >
